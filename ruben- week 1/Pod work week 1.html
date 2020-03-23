@@ -9,28 +9,50 @@
 
 // 1. add 5 to the array
 let arr = [1,2,3,4];
-let add5 = arr.map((val, i, arr) => {
+let add5 = arr.map((val) => {
     return val + 5;
 });
 console.log(add5);
 
-
 // 2. If even number/ multiply by 2.
-let times2 = arr.map((num, i) => {
+let times2 = arr.map((num) => {
     return num % 2 === 0 ? num * 2 : num;
-});
-// if num is divisible by 2 then itll be multiplied by 2
+}
+// if num is divisible by 2 then it'll be multiplied by 2
 console.log(times2);
 
 // 3.
 const prices = [12, 19, 7, 209];
-
+//takes each price and adds them together
 prices.reduce(function (totalPrice, nextPrice) {
     console.log(totalPrice);
     totalPrice += nextPrice;
     return totalPrice
 }, 0);
 
+// 4. converts  celsius to fahrenheit
+const celsius = [-15, -5, 0, 10, 16, 20, 24, 32]
+const fahrenheit = celsius.map(t => t * 1.8 + 32);
+console.log(fahrenheit);
+
+// 5. grades are greater than or equal to 90
+const students = [
+    { name: 'Quincy', grade: 96 },
+    { name: 'Jason', grade: 84 },
+    { name: 'Alexis', grade: 100 },
+    { name: 'Sam', grade: 65 },
+    { name: 'Katie', grade: 90 }
+];
+const studentGrades = students.filter(student => student.grade >= 90);
+console.log(studentGrades);
+
+// 6. reducing multiple arrays into one array
+var array_of_arrays = [[1, 2], [3, 4], [5, 6]];
+var concatenated = array_of_arrays.reduce( function (previous, current) {
+    return previous.concat(current);
+});
+
+console.log(concatenated);
 
 </script>
 </body>
